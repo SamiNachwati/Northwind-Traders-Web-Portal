@@ -1,0 +1,67 @@
+﻿@model Northwind.Models.Product
+
+@{
+    ViewData["Title"] = "Details - "  + Model.productName;
+}
+
+<h1>@Model.productName</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.supplierId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.supplierId)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.category.categoryName)
+        </dt>
+        <dd class="col-sm-10">
+            @ViewBag.CategoryName
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.quantityPerUnit)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.quantityPerUnit)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.unitPrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.unitPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.unitsInStock)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.unitsInStock)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.unitsOnOrder)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.unitsOnOrder)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.reorderLevel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.reorderLevel)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.discontinued)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.discontinued)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.productId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
